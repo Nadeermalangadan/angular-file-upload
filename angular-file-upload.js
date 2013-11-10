@@ -132,7 +132,7 @@ app.service('$fileUploader', [ '$compile', '$rootScope', function ($compile, $ro
         // add the base filter
         this.filters.unshift(this._filter);
 
-        $rootScope.$on('file:add', function (event, items, options) {
+        this.scope.$on('file:add', function (event, items, options) {
             this.addToQueue(items, options);
             event.stopPropagation();
         }.bind(this));
